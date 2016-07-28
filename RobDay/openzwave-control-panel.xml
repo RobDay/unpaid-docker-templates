@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Beta>False</Beta>
+  <Category>HomeAutomation:</Category>
+  <Name>open-zwave-control-panel</Name>
+  <Overview>The OpenZWave Control Panel (ozwcp for short) is an application built on the OpenZWave library that permits users to query, manage and monitor Z-Wave nodes and networks. It provides a web based user interface using AJAX principles.</Overview>
+  <license>MIT</license>
+  <Project>https://github.com/OpenZWave/open-zwave-control-panel</Project>
+  <Support>https://github.com/OpenZWave/open-zwave-control-panel</Support>
+  <Description>
+    The OpenZWave Control Panel (ozwcp for short) is an application built on the OpenZWave library http://code.google.com/p/open-zwave/ that permits users to query, manage and monitor Z-Wave nodes and networks. It provides a web based user interface using AJAX principles.
+  </Description>
+  <Registry>https://hub.docker.com/r/openzwave/openzwave-control-panel/</Registry>
+  <GitHub>https://github.com/OpenZWave/open-zwave-control-panel</GitHub>
+  <Repository>openzwave/openzwave-control-panel</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+     <Port>
+       <HostPort>8090</HostPort>
+       <ContainerPort>8090</ContainerPort>
+       <Protocol>tcp</Protocol>
+     </Port>
+   </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/app_config/home-assistant/</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8123]</WebUI>
+  <Banner>https://raw.githubusercontent.com/balloob/unraid-docker-templates/master/balloob/home-assistant-banner.png</Banner>
+  <Icon>https://raw.githubusercontent.com/balloob/unraid-docker-templates/master/balloob/home-assistant-icon.png</Icon>
+  <Config Name="Config Directory" Target="/config" Default="/mnt/cache/app_config/home-assistant" Mode="rw" Description="This path is where Home Assistant will store it's configuration files." Type="Path" Display="always" Required="true" Mask="false"/>
+</Container>
